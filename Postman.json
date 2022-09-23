@@ -1,0 +1,402 @@
+{
+  "version": 6,
+  "entities": [
+    {
+      "entity": {
+        "type": "Project",
+        "id": "e627fe67-bf7c-4822-960c-f5076fac8073",
+        "name": "Nest"
+      },
+      "children": [
+        {
+          "entity": {
+            "type": "Service",
+            "id": "7ca620c3-c0a7-4224-8f83-f6e8397300b6",
+            "name": "Bookmark"
+          },
+          "children": [
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "requestBody": true,
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+                  "name": "POST"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text",
+                  "textBody": "{\n  \"title\":\"User 4 Bookmark 4 Title\", \n  \"description\":\"User 4 Bookmark 4 Description\", \n  \"link\":\"User 4 Bookmark 4 Link\"\n}"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:5000",
+                  "path": "/bookmarks/new"
+                },
+                "id": "33c888ec-4ee9-4a9f-ac85-6b28a360bf8c",
+                "name": "Create Bookmark",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJ1c2VyNEBnbWFpbC5jb20iLCJpYXQiOjE2NjM5MjA3MTIsImV4cCI6MTY2MzkyMTYxMn0.1l6DPpwDAjzbUSlKws2cHP_YEp_Ifw5iKPISjyRfUbA"
+                  },
+                  {
+                    "enabled": true,
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.5",
+                  "name": "DELETE"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text",
+                  "textBody": "{\n  \"title\":\"User 4 Bookmark 2 Title\", \n  \"description\":\"User 4 Bookmark 2 Description\", \n  \"link\":\"User 4 Bookmark 2 Link\"\n}"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:5000",
+                  "path": "/bookmarks/delete/5"
+                },
+                "id": "a439c268-82a8-4009-8da7-cf9a1ab3d49a",
+                "name": "Delete Bookmark",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Authorization",
+                    "value": "Bearer ${getEntityById(\"8567a620-606b-47ec-a114-7e8665601c0b\").\"response\".\"body\".\"token\"}"
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "requestBody": true,
+                  "link": "http://tools.ietf.org/html/rfc5789",
+                  "name": "PATCH"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text",
+                  "textBody": "{\n  \"title\":\"User 4 Bookmark 2 Title\", \n  \"description\":\"User 4 Bookmark 2 Description\", \n  \"link\":\"User 4 Bookmark 2 Link\"\n}"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:5000",
+                  "path": "/bookmarks/edit/1"
+                },
+                "id": "a98a4245-7f7d-4f1b-9225-cf3a46b587b6",
+                "name": "Edit Bookmark",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Authorization",
+                    "value": "Bearer ${getEntityById(\"8567a620-606b-47ec-a114-7e8665601c0b\").\"response\".\"body\".\"token\"}"
+                  },
+                  {
+                    "enabled": true,
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                  "name": "GET"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:5000",
+                  "path": "/bookmarks/all"
+                },
+                "id": "7a7b1340-6975-4224-9bcc-fad9061304ab",
+                "name": "Get All Bookmarks Of User ID",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJ1c2VyNEBnbWFpbC5jb20iLCJpYXQiOjE2NjM5MjA3MTIsImV4cCI6MTY2MzkyMTYxMn0.1l6DPpwDAjzbUSlKws2cHP_YEp_Ifw5iKPISjyRfUbA"
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                  "name": "GET"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text",
+                  "textBody": "{\n  \"title\":\"User 4 Bookmark 2 Title\", \n  \"description\":\"User 4 Bookmark 2 Description\", \n  \"link\":\"User 4 Bookmark 2 Link\"\n}"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:5000",
+                  "path": "/bookmarks/1"
+                },
+                "id": "4212f7f1-a222-403a-8b4c-1344cfff01e0",
+                "name": "Get Bookmark By Bookmark ID",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Authorization",
+                    "value": "Bearer ${getEntityById(\"8567a620-606b-47ec-a114-7e8665601c0b\").\"response\".\"body\".\"token\"}"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "entity": {
+            "type": "Service",
+            "id": "a9c0308d-f861-4935-9a97-8df39ba99fc8",
+            "name": "User"
+          },
+          "children": [
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "requestBody": true,
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+                  "name": "POST"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text",
+                  "textBody": "{\n  \"email\":\"user4@gmail.com\",\n  \"password\":\"123456\"\n}"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:5000",
+                  "path": "/auth/login"
+                },
+                "id": "8567a620-606b-47ec-a114-7e8665601c0b",
+                "name": "Login",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "requestBody": true,
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+                  "name": "POST"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text",
+                  "textBody": "{\n  \"email\":\"user4@gmail.com\",\n  \"password\":\"123456\",\n  \"firstName\":\"User\",\n  \"lastName\":\"4\"\n}"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:5000",
+                  "path": "/auth/register"
+                },
+                "id": "153c47cc-3f58-4298-916e-07692b7ca7a7",
+                "name": "Sign up",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "requestBody": true,
+                  "link": "http://tools.ietf.org/html/rfc5789",
+                  "name": "PATCH"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text",
+                  "textBody": "{\n  \"password\":\"654321\"\n}"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:5000",
+                  "path": "/users/edit"
+                },
+                "id": "2825ba45-04b6-421c-86cf-6682ce57c8dd",
+                "name": "Update User",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJ1c2VyMkBnbWFpbC5jb20iLCJpYXQiOjE2NjM2NzExNDUsImV4cCI6MTY2MzY3MjA0NX0.tTutW-08HxL5bDEzjRIDWmvUsj6IxHKo2ErffX5DPzQ"
+                  },
+                  {
+                    "enabled": true,
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                  "name": "GET"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text",
+                  "textBody": "{\n  \"email\":\"user2@gmail.com\",\n  \"password\":\"123456\"\n}"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:5000",
+                  "path": "/users/me"
+                },
+                "id": "fe81161b-ed9f-454b-84ea-9a429a679bea",
+                "name": "Users Details",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJ1c2VyMkBnbWFpbC5jb20iLCJpYXQiOjE2NjM2NjYzNjgsImV4cCI6MTY2MzY2NzI2OH0.nOqZ0M8drzfVIKC9XEgJ3XfX2OYhVo8xBp9J8Z5A6jY"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
